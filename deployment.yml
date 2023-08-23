@@ -1,0 +1,19 @@
+$schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.schema.json
+app_insights_enabled: false
+code_configuration:
+  code: ./code
+  scoring_script: score.py
+endpoint_name: endpoint1
+environment: azureml://registries/TestRegistry/environments/test-env/versions/2
+instance_count: 1
+instance_type: Standard_F4s_v2
+model: azureml://registries/TestRegistry/models/test-model/versions/22
+name: deploy22
+properties: {}
+tags: {}
+type: managed
+request_settings:
+  request_timeout_ms: 600000
+environment_variables:
+  DEPLOYMENT_FOLDER: deployment_src
+  BRANCH: dev
